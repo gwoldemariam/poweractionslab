@@ -3,9 +3,17 @@ name: Release action
 # Runs when you publish a GitHub release, or manually from the Actions tab.
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'solutions/**'
   release:
     types: [published]
   workflow_dispatch:
+
+concurrency:
+  group: release-to-prod
+  cancel-in-progress: false
 
 permissions:
   contents: read
