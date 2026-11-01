@@ -9,7 +9,7 @@ on:
       solution_name:
         description: 'Name of the solution to work on from Power Platform'
         required: true
-        default: ALMLab
+        default: MigrationCommandCenter
       # Do not change these values
       solution_exported_folder:
         description: 'Folder for staging the exported solution *do not change*'
@@ -23,6 +23,10 @@ on:
         description: 'Folder to be created and checked in *do not change*'
         required: true
         default: solutions/
+      auto_deploy:
+        description: 'Merge the PR and deploy to production automatically'
+        type: boolean
+        default: true
 
 env:
   # Edit your values here
@@ -33,6 +37,7 @@ env:
 permissions:
   contents: write        # lets branch-solution push the new branch
   pull-requests: write
+  actions: write         # lets this workflow start the release workflow
 
 jobs:
   export-from-dev:
@@ -92,3 +97,24 @@ jobs:
             --head "solution-update-${{ github.run_number }}-${{ github.run_attempt }}" \
             --title "Solution update: ${{ github.event.inputs.solution_name }} (run ${{ github.run_number }})" \
             --body "Exported from DEV by workflow run ${{ github.run_id }}. Merging this PR deploys the solution to production automatically."
+
+      - name: Merge the pull request
+        if: ${{ inputs.auto_deploy }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="solution-update-${{ github.run_number }}-${{ github.run_attempt }}"
+          # GitHub needs a few seconds to work out whether the PR can merge
+          for i in 1 2 3 4 5 6; do
+            if gh pr merge "$BRANCH" --squash --delete-branch; then exit 0; fi
+            echo "Not mergeable yet, retrying in 10s..."; sleep 10
+          done
+          echo "Could not merge $BRANCH automatically"; exit 1
+
+      - name: Start the release to production
+        if: ${{ inputs.auto_deploy }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run release-action-call.yml --ref main
