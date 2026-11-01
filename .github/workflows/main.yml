@@ -78,7 +78,7 @@ jobs:
         with:
           solution-folder: ${{ github.event.inputs.solution_folder }}/${{ github.event.inputs.solution_name }}
           solution-target-folder: ${{ github.event.inputs.solution_target_folder }}/${{ github.event.inputs.solution_name }}
-          branch-name: solution-update-${{ github.run_number }}
+          branch-name: solution-update-${{ github.run_number }}-${{ github.run_attempt }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-empty-commit: true
 
@@ -89,6 +89,6 @@ jobs:
         run: |
           gh pr create \
             --base main \
-            --head "solution-update-${{ github.run_number }}" \
+            --head "solution-update-${{ github.run_number }}-${{ github.run_attempt }}" \
             --title "Solution update: ${{ github.event.inputs.solution_name }} (run ${{ github.run_number }})" \
             --body "Exported from DEV by workflow run ${{ github.run_id }}. Merging this PR deploys the solution to production automatically."
