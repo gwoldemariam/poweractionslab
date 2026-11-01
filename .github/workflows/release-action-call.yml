@@ -17,7 +17,7 @@ jobs:
       # Edit your values here
       solution_name: MigrationCommandCenter
       BUILD_ENVIRONMENT_URL: 'https://orga3464642.crm.dynamics.com/'
-      PRODUCTION_ENVIRONMENT_URL: 'https://org5e88a735.crm.dynamics.com/'
+      PRODUCTION_ENVIRONMENT_URL: 'https://org5579e8d7.crm.dynamics.com/'
       CLIENT_ID: 'da820c45-85e4-4c94-9362-0282dfd375c8'
       TENANT_ID: '5748c51c-4a6e-44d1-b429-f05d15835c0b'
     secrets:
