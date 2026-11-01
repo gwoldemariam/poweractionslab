@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cr8f7_migrationcommandcentercanvas_e0a52</Name>
+  <AppVersion>2026-10-10T17:36:20Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.26093.11.0</CreatedByClientVersion>
+  <MinClientVersion>3.26093.11.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.26093.11","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","m365CopilotSettingValue":"0","sienaVersion":"20261009T182822Z-3.26093.11.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Migration Command Center (Canvas)</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"5edfe461-443c-4dee-bca9-ceb796da2dcb":{"id":"/providers/microsoft.powerapps/apis/shared_sharepointonline","displayName":"SharePoint","iconUri":"https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4913/sharepointonline/icon.png","dataSources":["MCC_Activity","MCC_Asks","MCC_Attestation","MCC_Comms","MCC_ErrorLog","MCC_GateDecisions","MCC_IssueMessages","MCC_Issues","MCC_People","MCC_Scenarios","MCC_Sites","MCC_Stakeholders","MCC_Stats","MCC_Waves"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{"https://corey2025.sharepoint.com/sites/MigrationCommandCenter":{"dataSources":{"MCC_Activity":{"tableName":"4d6aaa0c-1c3b-4879-a0ce-dbaf09af0544"},"MCC_Asks":{"tableName":"b3918772-79a3-48c4-941c-1ed9f7a3ad52"},"MCC_Attestation":{"tableName":"7dcb9729-fae5-4fc4-b213-c8517b4b9570"},"MCC_Comms":{"tableName":"66caa38f-76f8-4190-a67a-53500ee486cc"},"MCC_ErrorLog":{"tableName":"49a89c3e-ccc2-4912-8bb4-ff7a87ade0fa"},"MCC_GateDecisions":{"tableName":"7bf50a46-7edb-4216-b0a5-de7c61022dd8"},"MCC_IssueMessages":{"tableName":"e4ee1455-13d4-4895-a8fe-b6b913528d78"},"MCC_Issues":{"tableName":"d57c2be9-1769-44da-b4e3-e3a6c03e1ec1"},"MCC_People":{"tableName":"29fa2c5d-6bba-490e-90b8-ca21cf5aaf23"},"MCC_Scenarios":{"tableName":"26df2d47-2736-4c31-8a26-b619d509d67e"},"MCC_Sites":{"tableName":"e0f9b17b-f2ea-4674-b9e6-ab882308a851"},"MCC_Stakeholders":{"tableName":"4c566751-f9c9-42b4-91d4-27e1c6cc8c11"},"MCC_Stats":{"tableName":"2184f6f3-ba32-4375-b12d-e6f0d9c8c894"},"MCC_Waves":{"tableName":"236321bc-ff14-4ee5-9a49-51c71654f4e8"}}}},"apiTier":"Standard","actions":["providers/PowerPlatform.Governance/Operations/Read","providers/PowerPlatform.Governance/Operations/Write","providers/PowerPlatform.Governance/Operations/Delete"]}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/cr8f7_migrationcommandcentercanvas_e0a52_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/cr8f7_migrationcommandcentercanvas_e0a52_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/cr8f7_migrationcommandcentercanvas_e0a52_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>
