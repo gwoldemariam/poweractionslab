@@ -78,5 +78,17 @@ jobs:
         with:
           solution-folder: ${{ github.event.inputs.solution_folder }}/${{ github.event.inputs.solution_name }}
           solution-target-folder: ${{ github.event.inputs.solution_target_folder }}/${{ github.event.inputs.solution_name }}
+          branch-name: solution-update-${{ github.run_number }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-empty-commit: true
+
+      - name: Open a pull request into main
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base main \
+            --head "solution-update-${{ github.run_number }}" \
+            --title "Solution update: ${{ github.event.inputs.solution_name }} (run ${{ github.run_number }})" \
+            --body "Exported from DEV by workflow run ${{ github.run_id }}. Merging this PR deploys the solution to production automatically."
